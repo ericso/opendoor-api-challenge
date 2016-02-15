@@ -11,6 +11,7 @@ class Listing(db.Model):
     __tablename__ = 'listings'
 
     id = db.Column(db.Integer, primary_key=True)
+    property_id = db.Column(db.Integer)
     street = db.Column(db.String(256), index=True)
     status = db.Column(db.String(128))
     price = db.Column(db.Integer)
@@ -42,7 +43,7 @@ class Listing(db.Model):
             "type": "Feature",
             "geometry": self.get_geometry(),
             "properties": {
-                "id": self.id,
+                "id": self.property_id,
                 "price": self.price,
                 "street": self.street,
                 "bedrooms": self.bedrooms,

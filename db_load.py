@@ -16,7 +16,8 @@ with app.app_context():
             print("Loading %s" % str(listing))
             try:
                 get_or_create(Listing,
-                    street=listing[1],  # listing[0] is the id
+                    property_id=listing[0],
+                    street=listing[1],
                     status=listing[2],
                     price=int(listing[3]),
                     bedrooms=int(listing[4]),

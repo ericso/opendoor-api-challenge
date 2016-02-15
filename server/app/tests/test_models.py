@@ -21,6 +21,7 @@ class ModelsTest(BaseTestCase):
     ### Tests ###
     def test_listing_geometry_type_is_point(self):
         listing = Listing(
+            property_id="123ABC",
             street="545 2nd Pl",
             status="pending",
             price=299727,
@@ -38,6 +39,7 @@ class ModelsTest(BaseTestCase):
 
     def test_listing_marshal_response(self):
         listing = Listing(
+            property_id="123ABC",
             street="545 2nd Pl",
             status="pending",
             price=299727,
@@ -60,7 +62,7 @@ class ModelsTest(BaseTestCase):
                 ]
             },
             "properties": {
-                "id": 1,
+                "id": "123ABC",
                 "price": 299727,
                 "street": "545 2nd Pl",
                 "bedrooms": 4,
