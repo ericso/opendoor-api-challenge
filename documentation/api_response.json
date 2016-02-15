@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-112.1, 33.4]
+      },
+      "properties": {
+        "id": "123ABC",  # CSV id
+        "price": 200000,  # Price in Dollars
+        "street": "123 Walnut St",
+        "bedrooms": 3,  # Bedrooms
+        "bathrooms": 2,  # Bathrooms
+        "sq_ft": 1500  # Square Footage
+      }
+    },
+    ...
+  ]
+}

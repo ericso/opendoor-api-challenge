@@ -1,0 +1,42 @@
+Opendoor API challenge. This is built using the Flask python web framework and
+the Flask-Restful library.
+
+
+Clone this repo
+
+  git clone git@github.com:ericso/opendoor-api-challenge.git
+
+Create a python virtual environment, or don't, but it's recommended.
+Use virtualenvwrapper:
+
+https://virtualenvwrapper.readthedocs.org/en/latest/
+
+  mkvirtualenv <name-of-virtualenv>
+
+Install the requirements
+
+  pip install -r requirements.txt
+
+Create the database
+
+  python db_create.py
+
+Populate the database
+
+  python db_load.py
+
+Run the tests
+
+  nosetests [--exe]  Note: you may have to add the --exe flag
+
+Run the app
+
+  python main.py
+
+
+Usage:
+The API is being served on localhost on port 5000.
+
+The API only supports querying the database for listings.
+
+See API documentation for more details.
