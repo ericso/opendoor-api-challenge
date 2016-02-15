@@ -3,16 +3,18 @@ Listings
 GET     /listing
 
 Parameters:
-min_price: The minimum listing price in dollars.
-max_price: The maximum listing price in dollars.
-min_bed: The minimum number of bedrooms.
-max_bed: The maximum number of bedrooms.
-min_bath: The minimum number of bathrooms.
-max_bath: The maximum number of bathrooms.
+min_price: {Integer} The minimum listing price in dollars.
+max_price: {Integer} The maximum listing price in dollars.
+min_bed: {Integer} The minimum number of bedrooms.
+max_bed: {Integer} The maximum number of bedrooms.
+min_bath: {Integer} The minimum number of bathrooms.
+max_bath: {Integer} The maximum number of bathrooms.
+page: {Integer} The page of results to be returned.
+per_page: {Integer} The number of results per page.
 
 Example:
 
-GET  /listing?min_price=250000&min_bed=4
+GET  /listing?min_price=250000&min_bed=4&page=2
 
-This will return all listings where the price is at least $250,000 and has at
-least 4 bedrooms.
+This will return the second page of listings where the price is at least
+$250,000 and has at least 4 bedrooms.

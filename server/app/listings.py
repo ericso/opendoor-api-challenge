@@ -49,7 +49,14 @@ class ListingsAPI(Resource):
         if "max_bath" in args:
             listings = listings.filter(Listing.bathrooms <= args["max_bath"])
 
-        listings = listings.all()
+        page = 1
+        per_page = 10
+        if "page" in args:
+            page = args["page"]
+        if "per_page" in args:
+            per_page = args["per_page"]
+
+        listings = listings.paginate(page=page, per_page=per_page).items
         # Make sure we have a list
         if not isinstance(listings, list):
             listings = [listings]
