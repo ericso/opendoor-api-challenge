@@ -40,3 +40,30 @@ The API is being served on localhost on port 5000.
 The API only supports querying the database for listings.
 
 See API documentation for more details.
+
+
+Discussion:
+
+There's so much more to do. The first thing I would do is to finish the tests
+and make them as robust as possible.
+
+The app needs to be able to change its configuration based on its deployment
+environment. For example, when deploying locally to test, its using a SQLite
+database. When deploying to Heroku, it uses Postgres. The postgres url is set
+in the config.py file but it currently has be manually uncommented before
+deploying to Heroku. It's possible to write a deploy script that will add this
+in. This has the advantage that you're not committing your database url to your
+public repository.
+
+Validation on the url parameters should be a next step as well. We should be
+checking to make sure the max_price, min_price, etc are all integers before
+using them in the query.
+
+The API could also be expanded to allow the other verbs: POST, PUT, DELETE,
+depending on the what you want to allow the user to do.
+
+Additionally, if you are to allow users to add, update, and delete listings,
+then a log in system should probably be implemented. This would use a
+combination of HTTP Basic Auth and server generated authentication tokens.
+Since it'll use Basic Auth, the API should only be deployed on a server with
+SSL encryption.
