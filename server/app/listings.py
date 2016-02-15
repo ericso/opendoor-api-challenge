@@ -22,12 +22,34 @@ class ListingsAPI(Resource):
         super(ListingsAPI, self).__init__()
 
     def get(self):
-        listings = Listing.query.first()
+        """GET request handler."""
+        listings = Listing.query
         response = {
             "type": "FeatureCollection",
             "features": []
         }
 
+        # Handle query parameters
+        args = request.args
+        if "min_price" in args:
+            listings = listings.filter(Listing.price >= args["min_price"])
+
+        if "max_price" in args:
+            listings = listings.filter(Listing.price <= args["max_price"])
+
+        if "min_bed" in args:
+            listings = listings.filter(Listing.bedrooms >= args["min_bed"])
+
+        if "max_bed" in args:
+            listings = listings.filter(Listing.bedrooms <= args["max_bed"])
+
+        if "min_bath" in args:
+            listings = listings.filter(Listing.bathrooms >= args["min_bath"])
+
+        if "max_bath" in args:
+            listings = listings.filter(Listing.bathrooms <= args["max_bath"])
+
+        listings = listings.all()
         # Make sure we have a list
         if not isinstance(listings, list):
             listings = [listings]
