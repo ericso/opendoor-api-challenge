@@ -16,12 +16,12 @@ class BaseConfig(object):
   CSRF_SESSION_KEY = 'secret'
 
   # flask SQLAlchemy settings
-  # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+  SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
 
   # Heroku Postgresql
-  SQLALCHEMY_DATABASE_URI = (
-    'postgres://fjeiobxuxhnoxd:gzeHX6hKF6oFaWeFULjEYIOTi7@ec2-54-83-29-133' + 
-    '.compute-1.amazonaws.com:5432/d8nv6b3prfag3o')
+  # SQLALCHEMY_DATABASE_URI = (
+  #   'postgres://fjeiobxuxhnoxd:gzeHX6hKF6oFaWeFULjEYIOTi7@ec2-54-83-29-133' +
+  #   '.compute-1.amazonaws.com:5432/d8nv6b3prfag3o')
 
   DATABASE_CONNECT_OPTIONS = {}
 
